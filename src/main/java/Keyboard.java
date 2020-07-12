@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Keyboard {
-    public void setButtons(SendMessage sendMessage){ //settings for telegram keyboard (buttons)
+    //settings for telegram keyboard (buttons)
+    public void setButtons(SendMessage sendMessage){
         ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
         sendMessage.setReplyMarkup(replyKeyboardMarkup);
         replyKeyboardMarkup.setSelective(true);
@@ -18,7 +19,7 @@ public class Keyboard {
         KeyboardRow keyboardFirstRow= new KeyboardRow();
 
         keyboardFirstRow.add(new KeyboardButton("/help"));
-        keyboardFirstRow.add(new KeyboardButton("/setting"));
+        keyboardFirstRow.add(new KeyboardButton("Расписание"));
 
         keyboardRowList.add(keyboardFirstRow);
         replyKeyboardMarkup.setKeyboard(keyboardRowList);

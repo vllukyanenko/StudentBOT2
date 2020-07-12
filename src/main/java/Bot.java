@@ -5,14 +5,15 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import ua.schedule.ScheduleManager;
 import ua.weather.bot.Model;
 import ua.weather.bot.Weather;
 import java.io.IOException;
 
 
-
 public class Bot extends TelegramLongPollingBot {
     public static void main(String[] args) {
+
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi=new TelegramBotsApi();
         try{
@@ -36,20 +37,24 @@ public class Bot extends TelegramLongPollingBot {
         }
     }
 
-    public void onUpdateReceived(Update update) {
+
+   synchronized public void onUpdateReceived(Update update) {
+
         Model model= new Model();
         Message message = update.getMessage();
-        // We check if the update has a message and the message has text
+        // We check if the update has a message and the message has text;
         if(message!=null && message.hasText()){
             switch (message.getText()){
                 case "/help":
                     sendMsg(message, "Чем я могу помочь?");
                             break;
-                case"/setting":
-                    sendMsg(message, "Что будем настраивать?");
+                case"Расписание":
+                    sendMsg(message, new ScheduleManager().getTodaySchedule());
                             break;
+
                 default:
                     try{
+                        //get weather information  for  entered city;
                         sendMsg(message, Weather.getWeather(message.getText(), model));
                     }catch (IOException e){
                         sendMsg(message,"Город не найден!");
@@ -58,6 +63,7 @@ public class Bot extends TelegramLongPollingBot {
         }
 
     }
+
 
     public String getBotUsername() {
         return "Student_UkrDUZT_bot";

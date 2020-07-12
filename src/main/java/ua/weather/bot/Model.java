@@ -8,6 +8,16 @@ public class Model {
     private String icon;
     private String main;
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    private String description;
+
 
     public String getName() {
         return name;

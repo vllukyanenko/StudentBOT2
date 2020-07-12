@@ -5,16 +5,16 @@ import java.util.Date;
 public class Lesson {
 
     private String name;
-    private int roomNumber;
+    private String roomNumber;
     private String professorsName;
     private Date start;
     private Date finish;
 
-    public Lesson(String name, int roomNumber, String professorsName) {
+    public Lesson(String name, String roomNumber, String professorsName) {
         this.name = name;
         this.roomNumber = roomNumber;
-//        this.professorsName = professorsName;
-//        this.finish = finish;
+       this.professorsName = professorsName;
+
     }
 
     public String getName() {
@@ -25,11 +25,11 @@ public class Lesson {
         this.name = name;
     }
 
-    public int getRoomNumber() {
+    public String getRoomNumber() {
         return roomNumber;
     }
 
-    public void setRoomNumber(int roomNumber) {
+    public void setRoomNumber(String roomNumber) {
         this.roomNumber = roomNumber;
     }
 
@@ -56,6 +56,7 @@ public class Lesson {
     public void setFinish(Date finish) {
         this.finish = finish;
     }
+
 
 
 
