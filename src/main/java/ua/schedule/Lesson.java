@@ -1,21 +1,21 @@
 package ua.schedule;
 
-import java.util.Date;
-
 public class Lesson {
 
     private String name;
     private String roomNumber;
     private String professorsName;
-    private Date start;
-    private Date finish;
+    private String start;
+    private String finish;
 
-    public Lesson(String name, String roomNumber, String professorsName) {
+    public Lesson(String name, String roomNumber, String professorsName, String start, String finish) {
         this.name = name;
         this.roomNumber = roomNumber;
-       this.professorsName = professorsName;
-
+        this.professorsName = professorsName;
+        this.start = start;
+        this.finish = finish;
     }
+
 
     public String getName() {
         return name;
@@ -41,19 +41,19 @@ public class Lesson {
         this.professorsName = professorsName;
     }
 
-    public Date getStart() {
+    public CharSequence getStart() {
         return start;
     }
 
-    public void setStart(Date start) {
+    public void setStart(String start) {
         this.start = start;
     }
 
-    public Date getFinish() {
+    public String getFinish() {
         return finish;
     }
 
-    public void setFinish(Date finish) {
+    public void setFinish(String finish) {
         this.finish = finish;
     }
 

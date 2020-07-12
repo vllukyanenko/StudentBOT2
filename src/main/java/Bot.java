@@ -5,6 +5,7 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import ua.schedule.Prompt;
 import ua.schedule.ScheduleManager;
 import ua.weather.bot.Model;
 import ua.weather.bot.Weather;
@@ -12,6 +13,7 @@ import java.io.IOException;
 
 
 public class Bot extends TelegramLongPollingBot {
+    boolean enablePrompt=true;
     public static void main(String[] args) {
 
         ApiContextInitializer.init();
@@ -61,6 +63,11 @@ public class Bot extends TelegramLongPollingBot {
                     }
             }
         }
+       if(enablePrompt){
+           sendMsg(message, new Prompt().getPrompt());
+           update.getUpdateId();
+
+       }
 
     }
 
