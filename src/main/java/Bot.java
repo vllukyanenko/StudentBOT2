@@ -40,6 +40,7 @@ public class Bot extends TelegramLongPollingBot {
     }
 
 
+
    synchronized public void onUpdateReceived(Update update) {
 
         Model model= new Model();
@@ -63,11 +64,6 @@ public class Bot extends TelegramLongPollingBot {
                     }
             }
         }
-       if(enablePrompt){
-           sendMsg(message, new Prompt().getPrompt());
-           update.getUpdateId();
-
-       }
 
     }
 

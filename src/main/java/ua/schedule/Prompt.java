@@ -9,25 +9,25 @@ public class Prompt {
        int i = 0;
        lessonNow = new DaysDeterminant().getDayDeterminant();
        switch (new TimeAndDate().getTime()) {
-           case "07:55":
+           case "14:07":
                less = String.join(" ", "Занятия начинаются через 5 мин.", lessonNow.get(i).getStart(), lessonNow.get(i).getName(), lessonNow.get(i).getRoomNumber(), lessonNow.get(i).getProfessorsName());
                if (!less.isEmpty()) {
                    return less;
                }
-           case "09:15":
+           case "14:08":
                i = 1;
                less = String.join(" ", "Следующая пара:", lessonNow.get(i).getStart(), lessonNow.get(i).getName(), lessonNow.get(i).getRoomNumber(), lessonNow.get(i).getProfessorsName());
                if (!less.isEmpty()) {
                    return less;
                }
-           case "10:45":
+           case "14:09":
                i = 2;
                less = String.join(" ", "Следующая пара:", lessonNow.get(i).getStart(), lessonNow.get(i).getName(), lessonNow.get(i).getRoomNumber(), lessonNow.get(i).getProfessorsName());
                if (!less.isEmpty()) {
                    return less;
                }
 
-           case "12:15":
+           case "14:10":
                i = 3;
                less = String.join(" ", "Следующая пара:", lessonNow.get(i).getStart(), lessonNow.get(i).getName(), lessonNow.get(i).getRoomNumber(), lessonNow.get(i).getProfessorsName());
 
